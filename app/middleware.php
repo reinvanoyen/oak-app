@@ -9,7 +9,3 @@ $router->middleware('default', [
     TrailingSlashMiddleware::class,
     OakHeaderMiddleware::class,
 ]);
-
-$router->middleware('auth', [
-    Middlewares\BasicAuthentication::class,
-]);
