@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Oak\Contracts\Console\InputInterface;
+use Oak\Contracts\Console\OutputInterface;
+use Oak\Contracts\Console\KernelInterface;
+
+$app = require_once __DIR__.'/app/bootstrap.php';
+
+$app->get(KernelInterface::class)->handle(
+    $app->get(InputInterface::class),
+    $app->get(OutputInterface::class)
+);
