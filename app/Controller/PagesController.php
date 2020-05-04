@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Oak\Filesystem\Facade\Filesystem;
 use Oak\Http\Controller\BaseController;
 use Oak\Session\Facade\Session;
 
@@ -16,7 +17,7 @@ class PagesController extends BaseController
             return '"'.$query['name'].'" set as name in the session';
         }
 
-        return 'Welcome to your OAK application. Try adding a name query param to the request.';
+        return Filesystem::get(__DIR__.'/../View/index.php');
     }
 
     public function view($slug)
